@@ -7,6 +7,7 @@ import {
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { IconSun, IconMoon } from "@tabler/icons-react";
+import { IconFishBone } from '@tabler/icons-react';
 
 interface HeaderComponentProps {
   opened: boolean;
@@ -33,12 +34,22 @@ export default function HeaderComponent({
             aria-label="Toggle navigation"
           />
         )}
-        <Text
+        <Text 
           size="xl"
           fw={900}
           variant="gradient"
           gradient={{ from: "red", to: "blue", deg: 90 }}
         >
+          <ActionIcon
+          variant="filled"
+          color={isDark ? "yellow" : "blue"}
+          onClick={toggleColorScheme}
+          size="lg"
+          aria-label={isDark ? "Light mode" : "Dark mode"}
+          mr ={20}
+        >
+          {isDark ? <IconFishBone stroke={2} size={20} /> : <IconFishBone stroke={2} size={20} />}
+          </ActionIcon>
           TRACKER-APP
         </Text>
       </Group>

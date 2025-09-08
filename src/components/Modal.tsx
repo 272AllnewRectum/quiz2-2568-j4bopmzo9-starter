@@ -6,6 +6,7 @@ import {
   Select,
   Button,
   Stack,
+  type DividerCssVariables,
 } from "@mantine/core";
 
 type AddFoodModalProps = {
@@ -26,12 +27,37 @@ export default function AddFoodModal({}: AddFoodModalProps) {
   const [category, setCategory] = useState<string | null>(null);
 
   const handleSubmit = () => {};
-
+    
   // หากต้องการแปง type string เป็น type number สามารถดูตัวอย่างนี้ได้
-  let val_number: number = Number("500.0");
-  console.log(val_number + 100); // 600.0
+  //let val_number: number = Number("500.0");
+  //console.log(val_number + 100); // 600.0
 
-  return {
-    /* Type additional text here. */
-  };
+  return (
+    <div
+      className="modal fade"
+      id="modal" //id="modalregister": ตัวระบุของ modal (ใช้กับ data-bs-target หน้า HomePage)
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabIndex={-1}
+      aria-labelledby="modalregisterLabel"
+      aria-hidden="true"
+    >
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <text className="modal-title">Add an items</text>
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  );
+    
+  
 }
