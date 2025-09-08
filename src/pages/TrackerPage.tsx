@@ -30,7 +30,7 @@ export default function FoodTracker() {
       >
         Add Food Item
       </Button>
-      <AddFoodModal/>
+  
       {/* Type additional AddFoodModal here. */}
 
       <Divider my="md" />
